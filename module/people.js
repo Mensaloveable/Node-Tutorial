@@ -1,7 +1,9 @@
-const people = ['tom', 'fred', 'sam', 'john'];
-const toons = ['tom', 'jerry', 'simba', 'mufasa'];
+const people = ["tom", "fred", "sam", "john"];
+const toons = ["tom", "jerry", "simba", "mufasa"];
+const ages = [23, 45, 56, 78];
 
-console.log(people);
-
-module.exports = toons;
-
+module.exports = {
+  people,
+  toons,
+  ages,
+};
