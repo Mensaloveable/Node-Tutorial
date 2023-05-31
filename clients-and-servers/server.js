@@ -7,7 +7,24 @@ const server = http.createServer((req, res) => {
   //   res.end("Hello, world!");
   console.log("Thank you for banking with us");
 
-  fs.readFile("./views/index.html", (err, data) => {
+  let path = "./views/";
+
+  switch (req.url) {
+    case "/":
+      res.statusCode = 200;
+      path += "index.html";
+      break;
+    case "/about":
+      res.statusCode = 200;
+      path += "about.html";
+      break;
+    default:
+      path += "404.html";
+      res.statusCode = 404;
+      break;
+  }
+
+  fs.readFile(path, (err, data) => {
     if (err) {
       console.log(err);
       res.end();
