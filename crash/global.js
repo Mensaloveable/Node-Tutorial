@@ -7,3 +7,6 @@ setTimeout(() => {
 const int = setInterval(() => {
   console.log("Every Second");
 }, 1000);
+
+console.log(__dirname);
+console.log(__filename);
