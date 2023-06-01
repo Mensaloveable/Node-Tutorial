@@ -3,8 +3,6 @@ const fs = require("fs");
 
 const server = http.createServer((req, res) => {
   res.setHeader("Content-Type", "text/html");
-  //   res.write("<h1>Hello there</h1>");
-  //   res.end("Hello, world!");
   console.log("Thank you for banking with us");
 
   let path = "./views/";
@@ -17,6 +15,11 @@ const server = http.createServer((req, res) => {
     case "/about":
       res.statusCode = 200;
       path += "about.html";
+      break;
+    case "/about-us":
+      res.statusCode = 301;
+      res.setHeader("Location", "/about");
+      res.end();
       break;
     default:
       path += "404.html";
